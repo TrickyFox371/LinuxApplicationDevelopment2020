@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 
+#define ESC 27
+
 int main (int argc, char **argv)
 {
     if (argc != 2)
@@ -36,8 +38,15 @@ int main (int argc, char **argv)
             addstr(str);
         }
         int inp;
-        while ((inp = getch()) != ' ') { }
+        while ((inp = getch()) != ' ' && inp != ESC) { }
+        if (inp == ESC)
+        {
+            endwin();
+            return 0;
+        }
     }
+    int inp;
+    while ((inp = getch()) != ESC) { }
     endwin();
     return 0;
 }
