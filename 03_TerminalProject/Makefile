@@ -1,5 +1,5 @@
-prog: prog.c
-	cc prog.c -o prog -lncursesw
+Show: Show.c
+	cc Show.c -o Show -lncursesw
 
 clean:
-	rm -f *~ *.o prog a.out
+	rm -f *~ *.o Show a.out
